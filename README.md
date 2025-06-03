@@ -1,6 +1,6 @@
 # EasyCoffee ☕️
 
-EasyCoffee, Flutter ile geliştirilmiş; Firebase Authentication, Cloud Firestore, Supabase ve SQLite altyapısıyla güçlendirilmiş bir kahve sipariş uygulamasıdır. Kullanıcıların kahve tercihlerini kaydedebileceği, sipariş verebileceği ve favori içeceklerini yönetebileceği mobil bir deneyim sunar. Modern tasarımı, tema desteği ve cihaz uyumluluğu ile fark yaratmayı amaçlamaktadır.
+EasyCoffee, Flutter ile geliştirilmiş; Firebase Authentication, Cloud Firestore, Supabase ve SQLite altyapısıyla güçlendirilmiş bir kahve sipariş uygulamasıdır. Kullanıcıların kahve tercihlerini kaydedebileceği, sipariş verebileceği ve favori içeceklerini yönetebileceği mobil bir deneyim sunar. Modern tasarımı ve cihaz uyumluluğu ile kullanıcı tarafındaki kullanım kolaylığı ön planda tutularak geliştirildi.
 
 ---
 
@@ -29,6 +29,20 @@ EasyCoffee uygulaması, kahve tutkunlarının mobil ortamda hızlı ve pratik bi
 * Responsive tasarım ve mobil uyumlu arayüz
 * Firebase ve Supabase veritabanı yapılandırmaları (Android, iOS, Web, macOS, Windows desteği)
 * SQLite ile giriş yapan kullanıcı bilgilerinin cihazda tutulması
+
+---
+
+## 🔧 Teknik Mimari
+
+| Katman | Teknoloji | Açıklama |
+|-------|-----------|----------|
+| UI    | Flutter   | Modern ve responsive mobil arayüz |
+| Auth  | Firebase Authentication | Giriş ve kayıt işlemleri |
+| Veri Saklama | Cloud Firestore | Doğum bilgileri, il |
+| Veri Yönetimi | Supabase | Kullanıcı profili, adres, telefon vb. |
+| Lokal Depolama | SQLite | UID ve e-posta gibi oturum bilgileri |
+| Durum Yönetimi | Provider | UI ve veri akışı kontrolü |
+| Ekstra | SharedPreferences | Oturum saklama |
 
 ---
 
@@ -62,7 +76,7 @@ Test için kullanılabilecek Firebase hesabı:
 
 ### 3. Ana Sayfa
 
-* Sipariş kartları, favori kahveler, profil ve ayarlara hızlı erişim
+* Sipariş kartları, profil ve ayarlara hızlı erişim
 
 ### 4. Siparişler Ekranı
 
@@ -75,10 +89,19 @@ Test için kullanılabilecek Firebase hesabı:
 ### 6. Profil Sayfası
 
 Kullanıcının ad, soyad, telefon, adres, cinsiyet, doğum tarihi ve doğum yeri bilgileri görüntülenir ve güncellenebilir.
-
 Bu veriler Supabase’e ve Firebase'e yazılır.
-
 SharedPreferences ile tema ve oturum bilgisi tutulur.
+
+### 7. Navigasyon Sistemi
+
+**Drawer tabanlı merkezi bir navigasyon yapısı** kullanılmaktadır. Bu yapı `AppDrawer` adlı özel bir widget ile sağlanır ve `BasePage` tabanlı tüm sayfalarda kullanılır.
+
+### 📌 AppDrawer içerikleri
+
+- Menü sayfası
+- Sepet sayfası
+- Profil Sayfası
+- Çıkış butonu
 
 ---
 
@@ -99,17 +122,22 @@ SharedPreferences ile tema ve oturum bilgisi tutulur.
 
 ---
 
-## 👥 Katkı Sağlayanlar
+## 📬 İletişim / Katkı
 
-**Rüveyda Nur Güneş**
+Bu projeye katkı sağlamak isterseniz, aşağıdaki yöntemlerle iletişime geçebilir veya katkıda bulunabilirsiniz:
 
-* Ana sayfa, sipariş listesi, yeni sipariş, favoriler, ayarlar sayfaları
-* Logo ve tema yönetimi, responsive tasarım, Firebase ve Supabase yapılandırması
+### 🔧 Katkı Sağlamak İçin:
+- 🐛 Hata mı buldunuz? → Yeni bir [issue](https://github.com/rvydgns/easyCoffeeFinal/issues) açın.
+- 💡 Yeni bir özellik mi eklemek istiyorsunuz? → Forklayıp pull request gönderin.
+- 📦 Projeye destek olmak istiyorsanız → README, dökümantasyon veya UI iyileştirmeleri konusunda katkıda bulunabilirsiniz.
 
-**Serhat Vahapoğlu**
+### 👥 Geliştiriciler
+| İsim | Rol | GitHub |
+|------|-----|--------|
+| **Serhat Vahapoğlu** | Firebase Authentication, SQLite, Supabase profilleri | [@SerhatVahappogglu](https://github.com/SerhatVahappogglu) |
+| **Rüveyda Nur Güneş** | UI tasarımı, ana sayfa, sipariş sistemi, tema | [@rvydgns](https://github.com/rvydgns) |
 
-* Giriş, kayıt, şifre yenileme sayfaları
-* Authentication ve SQLite/Supabase oturum yönetimi
+> ✉️ Geliştiricilere özel olarak ulaşmak isterseniz GitHub profilleri üzerinden iletişime geçebilirsiniz.
 
 ---
 
